@@ -5,8 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.sedena.app.entities.Adopter;
+//before eureka
+//@FeignClient(name="microserviceadopter", url ="http://localhost:9092")
 
-@FeignClient(name="microserviceadopter", url ="http://localhost:9092")
+//after eureka
+@FeignClient(name="microserviceadopter")
 public interface IAdopterFeign {
 	
 	@GetMapping("/adopter/id/{id}")
